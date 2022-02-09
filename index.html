@@ -30,6 +30,7 @@
         var y = canvas.height-30;
         var dx = 2;
         var dy = -2;
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
 
         function drawBall() {
@@ -46,16 +47,35 @@
 
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                 dx = -dx;
-            }
+                }
             if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
                 dy = -dy;
+                 }
 
-            }
             x += dx;
             y += dy;
         }
+        /*function randomColor() {
+            var latters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.randon() * 16)]
+                }
+            return color; 
+            }
+        
 
-   
+        function changeColor () {
+            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+                ctx.fillStyle = randomColor();
+            }
+            if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+                ctx.fillStyle = randomColor();
+            }
+           
+        }
+       
+   */
 
         setInterval(draw, 10);
 
